@@ -1,0 +1,181 @@
+:root{
+    --highlightColor:rgba(81, 0, 212, 0.838);
+
+}
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-align: center;
+}
+body{
+    width: 75%;
+    background: rgb(255, 255, 255);
+    display: inline-flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+main{
+    width: 100%;
+}
+/* =======================Header Nav Style=========================== */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8rem;
+    padding: 1.7rem;
+}
+nav .logoBox{
+    display: flex;
+    align-items: center;
+}
+nav .options{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: .7rem;
+}
+nav .item{
+    padding: 10px;
+    font-size: 14px;
+    transition: all 0.5s ease-in-out;
+    border-radius: 4px
+}
+nav .item:hover{
+    color: white;
+    box-shadow: 2px 2px 6px var(--highlightColor),-2px -2px 6px var(--highlightColor);
+    background: var(--highlightColor);
+}
+nav button{
+    display: flex;
+    height: fit-content;
+    padding: .6rem;
+    font-size: 16px;
+    font-weight: 550;
+    border: 0px;
+    border-radius: 0px 10px 0px 10px;
+    color: white;
+    background: var(--highlightColor);
+    transition: all 0.4s ease-in;
+}
+nav button:hover{   
+    background: white;
+    box-shadow: 4px 4px 6px var(--highlightColor), -4px -4px 6px var(--highlightColor);
+    color: black;
+}
+/* =======================Hero Section Style=========================== */
+.heroSection{
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.heroSection .leftBox{
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    gap: 2.2rem;
+    align-items: flex-start;
+}
+.heroSection  .heroTop {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.heroSection h1{
+    text-align: left;
+    font-size: 49px;
+}
+.heroSection .heroBot{
+    display: flex;
+    flex-flow: wrap column;
+    align-items: flex-start;
+    gap: 1.7rem;
+}
+.heroBot p{
+    text-align: left;
+}
+.heroTop span{
+    color: var(--highlightColor);
+    font-weight: 600;
+    font-size: large;
+}
+.leftBox .buttons{
+    display: flex;
+    gap: 1.3rem;
+}
+.leftBox button{
+    height: 2.4rem;
+    border: 3px solid transparent;
+    border-radius:0px 10px 0px 10px;
+    font-size: 13px;
+    font-weight: 550;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    color: white;
+    transition: all 0.4s ease-out;
+}
+#start{
+    background: var(--highlightColor);
+}
+#start:hover{
+    border: 3px solid var(--highlightColor);
+    background: white;
+    color: var(--highlightColor);
+}
+#tour{
+    background: rgb(23, 21, 21);
+}
+#tour:hover{
+    border: 3px solid rgb(23, 21, 21);
+    background: white;
+    color: black;
+}
+.rightBox img{
+    height: 33rem;
+    border-radius: 10px;
+}
+/* =======================Features Section Style=========================== */
+.features{
+    height: fit-content;
+    display: flex;
+    flex-flow: column;
+}
+.features .topBox{
+    height: fit-content;
+    padding:20px
+}
+.features .bottomBox{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    color: white;
+    gap: 2.5rem;
+}
+.cards{
+    height: fit-content;
+    padding: 20px;
+    border-radius: 15px;
+}
+#c1{
+    background: rgba(0, 0, 255, 0.692);
+}
+#c2{
+    background: rgb(255, 0, 106);
+}
+#c3{
+    background: rgb(219, 170, 10);
+}
+#c4{
+    background: rgb(7, 158, 143)
+}
+#c5{
+    background: green;
+}
+#c6{
+    background: rgb(101, 11, 101);
+}
