@@ -29,6 +29,10 @@ nav{
 nav .logoBox{
     display: flex;
     align-items: center;
+    gap: 0.2rem;
+}
+.logoBox svg{
+    fill: var(--highlightColor);
 }
 nav .options{
     display: flex;
