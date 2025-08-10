@@ -9,22 +9,32 @@
     text-align: center;
 }
 body{
-    width: 75%;
-    background: rgb(255, 255, 255);
-    display: inline-flex;
-    flex-direction: column;
+    width: 100%;
+    background:white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    flex-flow:column;
+}
+header,footer {
+    width: 75%;
 }
 main{
-    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;    
 }
+.feedback, .heroSection, .testimonalSection{
+    width: 75%;
+}
+
 /* =======================Header Nav Style=========================== */
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 8rem;
-    padding: 1.7rem;
+    padding: 1.7rem 0rem 1.7rem 0rem;
 }
 nav .logoBox{
     display: flex;
@@ -38,11 +48,13 @@ nav .options{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     column-gap: .7rem;
 }
 nav .item{
     padding: 10px;
     font-size: 14px;
+    font-weight: 500;
     transition: all 0.5s ease-in-out;
     border-radius: 4px
 }
@@ -68,20 +80,56 @@ nav button:hover{
     box-shadow: 4px 4px 6px var(--highlightColor), -4px -4px 6px var(--highlightColor);
     color: black;
 }
+/* *****************Responsiveness for Tablets *************** */
+@media (width <=768px){
+
+    nav .options{
+        flex-flow:wrap;
+    }
+    nav .item{
+        font-size: 11px;
+        font-weight: 500;
+        padding: 2px;
+    }
+    nav button{
+        font-size:12px;
+        padding: 0.4rem;
+    }
+
+}
+@media (width<=450px)
+{
+    nav .options{
+        display: none;
+    }
+}
 /* =======================Hero Section Style=========================== */
 .heroSection{
     height: fit-content;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 1.3rem 0rem;
 }
 .heroSection .leftBox{
     width: 50%;
-    padding: 20px;
+    padding: 1.2rem 0rem 1.2rem 0rem;
     display: flex;
     flex-flow: column;
     gap: 2.2rem;
-    align-items: flex-start;
+    animation: slideIn .7s ease-in-out;
+}
+@keyframes slideIn{
+    0%{
+        opacity: 0;
+        position: relative;
+        right: 800px;
+    }
+    100%{
+        opacity: 1;
+        position: relative;
+        right: 0px;
+    }
 }
 .heroSection  .heroTop {
     display: flex;
@@ -140,46 +188,291 @@ nav button:hover{
     color: black;
 }
 .rightBox img{
+    margin-left: 2rem;
     height: 33rem;
     border-radius: 10px;
 }
+
+/* *****************Responsiveness for Tablets and Phones *************** */
+@media (768px <= width <=960px) {
+    .rightBox img{
+        width:25rem;
+    }
+}
+@media (width<=768px){
+    .heroSection{
+        flex-flow: column;
+    }
+    .heroSection .leftBox{
+        width: 100%;
+    }
+    .rightBox img{
+        height:31rem;
+    } 
+}
+@media (width<=458px){
+    .rightBox img{
+        height: 27rem;
+    }
+}
 /* =======================Features Section Style=========================== */
 .features{
+    width: 100%;
     height: fit-content;
+    padding: 2rem 0rem;
+    background: rgb(216, 213, 213);
+    display: flex;
+    justify-content: center;
+}
+.featureBox{
     display: flex;
     flex-flow: column;
+    width: 70%;
 }
 .features .topBox{
     height: fit-content;
-    padding:20px
+    padding-bottom: 1.5rem;
 }
-.features .bottomBox{
+.topBox h2{
+    font-weight: 750;
+    padding-bottom: .8rem;
+}
+.bottomBox h3{
+    padding: .8rem 0rem;
+}
+.featureBox .bottomBox{
     display: grid;
+    flex-flow: column;
+    align-items: center;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(3,1fr);
     color: white;
-    gap: 2.5rem;
+    gap: 2rem;
+}
+.features .bottomBox .icon{
+    height: 35px;
+    width: 35px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 }
 .cards{
-    height: fit-content;
-    padding: 20px;
+    min-height: 15rem;
+    padding: 2rem;
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
 }
 #c1{
     background: rgba(0, 0, 255, 0.692);
 }
+#c1 svg{
+    fill:rgba(0, 0, 255, 0.692);
+}
 #c2{
     background: rgb(255, 0, 106);
 }
+#c2 svg{
+    fill: rgb(255,0,106);
+}
 #c3{
-    background: rgb(219, 170, 10);
+    background: rgb(227, 180, 25);
+}
+#c3 svg{
+    fill: rgb(219,170,10);
 }
 #c4{
     background: rgb(7, 158, 143)
 }
+#c4 svg{
+    fill:rgb(7,158,143);
+}
 #c5{
     background: green;
 }
+#c5 svg{
+    fill:green;
+}
 #c6{
     background: rgb(101, 11, 101);
+}
+#c6 svg{
+    fill:rgb(101,11,101);
+}
+/* *****************Responsiveness for Tablets and Phones *************** */
+@media (width<=768px){
+    .featureBox .bottomBox{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+/* =======================Testimonal Section Style=========================== */
+.testimonalSection{
+    display: flex;
+    padding: 1.3rem 0rem;
+    flex-flow: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.reviewBox{
+    display: flex;
+    gap: 0rem 1.1rem;
+    justify-content: space-between;
+}
+.boxes{
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border : 2px solid rgb(193, 189, 189);
+    border-radius: 10px;
+    padding: 15px;
+    transition: all .5s ease-out;
+}
+.boxes:hover{
+    scale:1.1;
+    border : 2px solid rgb(153, 151, 151);
+    box-shadow: 3px 3px 7px gray, -3px -3px 7px gray;
+}
+.boxes img{
+    border-radius: 5px;
+}
+.boxes big{
+    color: var(--highlightColor);
+    font-weight: 550;
+}
+.boxes p{
+    margin-bottom: 0.7rem;
+}
+/* *****************Responsiveness for Tablets and Phones *************** */
+@media (width <= 768px){
+    .reviewBox{
+    gap: 1.1rem 0rem;
+    flex-flow: column;
+    }
+}
+/* =======================Feedback Section Style=========================== */
+.feedback{
+    margin: 2rem 0rem 2rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 20rem;
+    background: rgb(190, 186, 186);
+}
+.feedback .leftBox{
+    width: 50%;
+    height: 100%;
+    background-image: url("/MinorProjects/EduSync/images/Pic2.jpg");
+}
+.feedback .rightBox{
+    display: flex;
+    flex-flow: column;
+    padding: 30px;
+    align-items: flex-start;
+}
+.feedback .rightBox h1{
+    color: var(--highlightColor);
+    font-weight: 750;
+    font-size: xx-large;
+}
+.rightBox p{
+    font-size: small;
+    text-align: left;
+    margin-bottom: 5px;
+}
+.rightBox .inputMail{
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+}
+.inputMail input{
+    height: 25px;
+    text-align: left;
+    padding: 4px;
+    width: fit-content;
+}
+.inputMail button{
+    border: 0px;
+    border-radius: 3px ;
+    background: var(--highlightColor);
+    color: white;
+    padding: 7px;
+    width: fit-content;
+}
+/* *****************Responsiveness for Tablets and Phones *************** */
+@media (width <= 768px){
+    .feedback {
+        flex-flow: column;
+    }
+    .feedback .leftBox{
+        width: 100%;
+        height: 50%;
+    }
+}
+/* =======================Footer Section Style=========================== */
+.footcontent{
+    margin: 1.2rem 0rem 1.2rem 0rem;
+    height: 15rem;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.footcontent .leftBox{
+    height:50%;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.footcontent .logoBox{
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footcontent .quote{
+    margin-bottom: .5rem;
+    font-size: small;
+    font-weight: 600;
+}
+.footcontent .svgs{
+    display: flex;
+    justify-content: flex-start;
+    gap: .7rem;
+}
+.footcontent .svgs a:hover{
+    fill: var(--highlightColor);
+}
+.footcontent .rightBox {
+    width:60%;
+    display:flex;
+    justify-content: space-between;
+    font-size: small;
+}
+.rightBox .footnav{
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: .7rem;
+    margin: 1.2rem 0rem 1.2rem 0rem;
+}
+.footnav big{
+    font-weight: 700;
+}
+/* *****************Responsiveness for Tablets and Phones *************** */
+@media (width <= 768px){
+    .footcontent{
+        flex-flow:column;
+        height: fit-content;
+    }
+    .footcontent .rightBox {
+        width: 100%;
+        font-size: 10px;
+    }
 }
