@@ -1,5 +1,190 @@
+:root{
+    --primaryTextColor : #08313a;
+    --secondaryTextColor:#1a5653;
+    --AccentBgColor:rgba(133, 252, 159, 0.539);
+    --AccentColor:#107869;
+    --AccentForeColor:#5cd85a;
+    --head-blur:rgb(255, 255, 255,0.8);
+    --shadow: rgb(255, 255, 255);
+}
+
+.darkmode{
+    --primaryTextColor : #4bf486;
+    --AccentBgColor:rgba(46, 123, 63, 0.539);
+    --AccentColor:#12cdb1;
+    --head-blur:rgba(0, 0, 0, 0.8);
+    --shadow: rgb(44, 43, 43);
+    background: url("./images/DarkBg.jpg");
+    background-size: auto;
+}
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
 body{
-    margin: 0px;
-    padding: 0px;
+    background-color: rgba(255,255,255,0.9);
+    background-image: url("./images/LightBg.jpg");
     text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-flow: column;
+    place-content: center;
+    transition: all .5s ease-in-out;
+}
+header{
+    width:100%;
+    margin-top:1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    color: var(--primaryTextColor);
+    background-color: var(--head-blur);
+    text-shadow: 1px 1px 2px var(--AccentColor);
+}
+#switchTheme{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: .3rem;
+    border:2px solid black;
+    border-radius: 50px;
+    background-color: gray;
+    height: 35px;
+    width: 35px;
+    position: fixed;
+    top:3rem;
+    right: 3rem;
+    transition: all 0.3s ease-in;
+}
+
+#switchTheme svg:first-child{
+    display: none;
+}
+.darkmode #switchTheme svg:first-child{
+    display:block;
+}
+.darkmode #switchTheme svg:last-child{
+    display:none;
+}
+#switchTheme:hover{
+    box-shadow: 2px 2px 3px var(--head-blur), -2px -2px 3px var(--shadow);
+}
+main{
+    margin: 3rem;
+    height: fit-content;
+    padding: 2rem;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.hero{
+    display: flex;
+    align-items: center;
+    padding: 1.2rem;
+    color:var(--primaryTextColor);
+    text-shadow: 2px 2px 1px var(--shadow), -2px -2px 1px var(--shadow);
+    font-size: x-large;
+    transform: rotateZ(-15deg);
+}
+.content{
+    height: fit-content;
+    padding:4rem ;
+    margin: 2rem;
+    border: 3px solid var(--AccentColor);
+    border-radius: 10px ;
+    background: var(--AccentBgColor);
+}
+#task{
+    font-size: x-large;
+    font-weight: 600;
+    font-family:'Lucida Hadnwritting';
+    color:var(--secondaryTextColor);
+    border: 2px solid var(--AccentColor);
+    border-radius:10px; 
+    padding: .3rem;
+    transition: all .3s ease-in-out;
+}
+#task:hover{
+    box-shadow: 3px 3px 5px var(--AccentForeColor);
+}
+#addTask{
+    font-weight: 600;
+    color:var(--secondaryTextColor);
+    border: 2px solid var(--AccentBgColor);
+    border-radius:0px 15px; 
+    padding: .4rem;
+    margin:.4rem;
+    transition: all .3s ease-in-out;
+}
+#addTask:hover{
+    color: var(--secondaryTextColor);
+    box-shadow: 3px 3px 5px var(--AccentForeColor), -3px -3px 5px var(--AccentForeColor);
+}
+#todoList{
+    margin:.5rem;
+}
+#todoList p{
+    font-size: larger;
+    font-weight: 700;
+    font-family: Rockwell;
+    padding: .4rem;
+    margin:.1rem;
+    border: 2px solid var(--AccentColor);
+    border-radius: 15px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .4s ease-in;
+}
+#todoList p.completed, p.completed button{
+    text-decoration: 2px line-through;
+    color: var(--AccentColor);
+    background: var(--AccentBgColor);
+}
+#todoList button{
+    padding:.2rem;
+    font-weight: 900;
+    text-decoration: none;
+    background: transparent;
+    border: 1px transparent;
+    /* color:Red; */
+}
+
+
+/* =========================ResponsiveNess=============================== */
+@media(468px<=width<=768px){
+    main{
+        flex-flow:column;
+        padding:1rem;
+        margin:1.5rem;
+    }
+    .hero{
+        padding: 1rem;
+        font-size: large;
+    }
+    .content{
+        padding:3.3rem;
+        margin:1.5rem;
+    }
+}
+@media(width<=467px){
+    main{
+        flex-flow:column;
+        padding:.4rem;
+        margin:.8rem;
+        justify-content: space-between;
+    }
+    .hero{
+        padding:.8rem;
+        font-size:medium;
+    }
+    .content{
+        padding:1.7rem;
+        margin:1.2rem;
+    }
 }
