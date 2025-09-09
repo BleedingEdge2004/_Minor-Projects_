@@ -1,19 +1,20 @@
 :root{
-    --primaryTextColor : #08313a;
-    --secondaryTextColor:#1a5653;
-    --AccentBgColor:rgba(133, 252, 159, 0.539);
-    --AccentColor:#107869;
-    --AccentForeColor:#5cd85a;
-    --head-blur:rgb(255, 255, 255,0.8);
+    --primaryTextColor : #09242a;
+    --secondaryTextColor:#192e2d;
+    --AccentBgColor:rgba(113, 113, 113, 0.539);
+    --AccentColor:#333633;
+    --AccentForeColor:#181c18;
+    --head-blur:rgba(61, 60, 60, 0.4);
     --shadow: rgb(255, 255, 255);
 }
 
 .darkmode{
-    --primaryTextColor : #4bf486;
-    --AccentBgColor:rgba(46, 123, 63, 0.539);
-    --AccentColor:#12cdb1;
-    --head-blur:rgba(0, 0, 0, 0.8);
-    --shadow: rgb(44, 43, 43);
+    --primaryTextColor : #3dfff2;
+    --AccentBgColor:rgba(46, 106, 123, 0.539);
+    --AccentColor:#4e9afd;
+    --AccentForeColor:#91eff7;
+    --head-blur:rgba(255,255,255, 0.4);
+    --shadow: #181c18;
     background: url("./images/DarkBg.jpg");
     background-size: auto;
 }
@@ -42,7 +43,7 @@ header{
     height: 6rem;
     color: var(--primaryTextColor);
     background-color: var(--head-blur);
-    text-shadow: 1px 1px 2px var(--AccentColor);
+    text-shadow: 1px 1px 3px var(--shadow),-1px -1px 3px var(--shadow);
 }
 #switchTheme{
     display:flex;
@@ -70,7 +71,7 @@ header{
     display:none;
 }
 #switchTheme:hover{
-    box-shadow: 2px 2px 3px var(--head-blur), -2px -2px 3px var(--shadow);
+    box-shadow: 3px 3px 5px var(--shadow), -3px -3px 5px var(--shadow),3px -3px 5px var(--shadow),-3px 3px 5px var(--shadow);
 }
 main{
     margin: 3rem;
@@ -80,14 +81,13 @@ main{
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
-    
 }
 .hero{
     display: flex;
     align-items: center;
     padding: 1.2rem;
-    color:var(--primaryTextColor);
-    text-shadow: 2px 2px 1px var(--shadow), -2px -2px 1px var(--shadow);
+    color:var(--AccentForeColor);
+    text-shadow: 14px 14px 8px var(--shadow), -14px -14px 8px var(--shadow),14px -14px 8px var(--shadow),-14px 14px 8px var(--shadow);
     font-size: x-large;
     transform: rotateZ(-15deg);
 }
@@ -97,7 +97,7 @@ main{
     margin: 2rem;
     border: 3px solid var(--AccentColor);
     border-radius: 10px ;
-    background: var(--AccentBgColor);
+    background: var(--head-blur);
 }
 #task{
     font-size: x-large;
@@ -110,7 +110,7 @@ main{
     transition: all .3s ease-in-out;
 }
 #task:hover{
-    box-shadow: 3px 3px 5px var(--AccentForeColor);
+    box-shadow: 4px 4px 6px var(--AccentForeColor);
 }
 #addTask{
     font-weight: 600;
@@ -152,7 +152,12 @@ main{
     text-decoration: none;
     background: transparent;
     border: 1px transparent;
-    /* color:Red; */
+}
+#todoList svg{
+    fill:white;
+}
+#todoList svg:hover{
+    fill:rgb(255, 0, 0);
 }
 
 
@@ -184,7 +189,8 @@ main{
         font-size:medium;
     }
     .content{
-        padding:1.7rem;
-        margin:1.2rem;
+        flex-flow: column nowrap;
+        padding:1.8rem 0.3rem;
+        margin:3.6rem 0rem;
     }
 }
