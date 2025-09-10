@@ -3,6 +3,7 @@ const addTask = document.getElementById("addTask");
 const todoList = document.getElementById("todoList");
 const task = document.getElementById("task");
 const themeBtn = document.getElementById("switchTheme");
+const body = document.body;
 
 // Add CheckBox and Delete Buttons
 const AddBtns = (element) => {
@@ -26,6 +27,7 @@ const AddTask = () => {
         todoList.prepend(newTask);
 
         AddBtns(newTask);
+        SaveTasks();
         task.value = "";
     }
     else {
@@ -42,6 +44,7 @@ const UpdateTask = (event) => {
             target.innerText = updateTask;
 
             AddBtns(target);
+            SaveTasks();
         }
         else {
             alert("Your Task Can Not Be Empty");
@@ -52,23 +55,50 @@ const UpdateTask = (event) => {
 // Mark Task Complete or not And Remove Button Functionality
 const HandleButton = (event) => {
     if (event.target.tagName === "INPUT") {
-
         if (event.target.parentNode.getAttribute("class") === "completed") {
             event.target.parentNode.setAttribute("class", "");
-        }
-        else {
+        }else {
             event.target.parentNode.setAttribute("class", "completed");
         }
-    }
-
-    if (event.target.parentNode.tagName === "BUTTON") {
+    }if (event.target.parentNode.tagName === "BUTTON") {
         event.target.parentNode.parentNode.remove();
     }
 }
 
+// Save Todo list Tasks
+const SaveTasks = () => {
+    const tasks = [...todoList.children].map(p =>
+        p.textContent);
+    tasks.reverse();
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+// Load ToDo  list Tasks
+const LoadTasks = () => {
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks.forEach(task => {
+        let item = document.createElement("p");
+        item.innerText = task;
+        todoList.prepend(item);
+        AddBtns(item);
+    })
+}
+
 // Switches Dark/Light Mode
 const SwitchTheme = () => {
-    document.body.classList.toggle("darkmode");
+    if (localStorage.getItem("theme") !== "darkmode") {
+        body.classList.add("darkmode");
+        localStorage.setItem("theme", "darkmode");
+    }
+    else {
+            body.classList.remove("darkmode");
+            localStorage.setItem("theme", "lightmode");
+    }
+}
+// Load Theme after  Reload or Restart
+const LoadTheme = () => {
+    if (localStorage.getItem("theme") === "darkmode") {
+        body.classList.toggle("darkmode");
+    }
 }
 
 // Evevnt Listeners all Over Page
@@ -81,3 +111,5 @@ task.addEventListener('keydown', (e) => {
         AddTask();
     }
 });
+LoadTheme();
+LoadTasks();
