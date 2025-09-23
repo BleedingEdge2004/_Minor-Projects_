@@ -62,6 +62,7 @@ const HandleButton = (event) => {
         }
     }if (event.target.parentNode.tagName === "BUTTON") {
         event.target.parentNode.parentNode.remove();
+        SaveTasks();
     }
 }
 
