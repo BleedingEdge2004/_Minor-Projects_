@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <section class="mainContent">
+      <div class="heading"><h1></h1></div>  
+      <div class="topBox">
+        <div id="balanceBox">
+        
+            <div id="currentBalance">
+                <h2>Balance : </h2>
+                <span id="amount">0</span>
+            </div>
+        
+            <div>
+                <div class="totalInc">
+                    <h3><u>Total Income</u></h3>
+                    <p id="totalInc">0</p>
+                </div>
+                <div class="totalExp">
+                    <h3><u>Total Expence</u></h3>
+                    <p id="totalExp">0</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="bottomBox">
+
+        <div id="expenceBox">
+            <table id="Exps"><thead><h3><b>Expenses</b></h3></thead>
+                <th>Sr No.</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Transaction</th>
+                <th>Date/Time</th>
+                <th>Remove</th>
+            </table>
+        </div>
+
+        <div id="newEntry">
+        
+            <h3><b>Add New Entry</b></h3>
+            <form id="idForm" >
+                
+                <label for="expType"><big><b>Entry Type</b></big>
+                    <select name="type" id="expType" >
+                        <option value="Income">Income</option>
+                        <option value="Expence">Expence</option>
+                    </select>
+                </label>
+
+                <label for="name"><big><b>Name </b></big>
+                    <input type="text"  name="name" id="name">
+                </label>
+                
+                <label for="amountVal"><big><b>Amount </b></big>
+                    <input type="number" name="amount" id="amountVal">
+                </label>
+                
+                <button id="submit" >Add Record</button>
+
+            </form>
+
+        </div>
+    </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>
