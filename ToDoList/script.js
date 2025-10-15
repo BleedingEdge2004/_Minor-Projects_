@@ -95,7 +95,7 @@ const SwitchTheme = () => {
             localStorage.setItem("theme", "lightmode");
     }
 }
-// Load Theme after  Reload or Restart
+// Load Theme after Reload or Restart
 const LoadTheme = () => {
     if (localStorage.getItem("theme") === "darkmode") {
         body.classList.toggle("darkmode");
