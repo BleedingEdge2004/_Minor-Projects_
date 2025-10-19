@@ -16,7 +16,8 @@ const InsertRecord = (valueSet) => {
         data.innerText = valueSet[d];
         row.appendChild(data);
     }
-    let delBtn = document.createElement("div");
+    let delBtn = document.createElement("td");
+    delBtn.classList.add("svgBtn");
     delBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="20px"><path  d="M166.2-16c-13.3 0-25.3 8.3-30 20.8L120 48 24 48C10.7 48 0 58.7 0 72S10.7 96 24 96l400 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-96 0-16.2-43.2C307.1-7.7 295.2-16 281.8-16L166.2-16zM32 144l0 304c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-304-48 0 0 304c0 8.8-7.2 16-16 16L96 464c-8.8 0-16-7.2-16-16l0-304-48 0zm160 72c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 176c0 13.3 10.7 24 24 24s24-10.7 24-24l0-176zm112 0c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 176c0 13.3 10.7 24 24 24s24-10.7 24-24l0-176z"/></svg>`;
     row.appendChild(delBtn);
 
@@ -35,7 +36,7 @@ const AddRecord = (e) => {
     let dataSet = [srNo, expName.value, expAmount.value, transaction, waqtTime];
     if (expName.value.trim() !== "" && expAmount.value !== "" && expAmount.value !== "0") {
         InsertRecord(dataSet);
-        SaveRow(dataSet);
+        // SaveRow(dataSet);
         expName.value = "";
         expAmount.value = "";
     }
@@ -62,7 +63,7 @@ const UpdateBalance = () => {
 
 //  ================= Delete Table Row ===================== //
 const DeleteRow = (e) => {
-    if (e.target.tagName === "DIV") {
+    if (e.target.classList.contains("svgBtn")) {
         alert("The Data is Removed");
         e.target.parentNode.remove();
     }
@@ -77,12 +78,16 @@ const SaveRow = (listData) => {
 //  ================= Load Data ================= //
 const LoadRow = () => {
     let srNo = 1;
-    while (localStorage.getItem(srNo) !== "") {
-        let record = JSON.parse(localStorage.getItem(`${srNo}`)) || [];
-        InsertRecord(record);
-        srNo++;
+    if (localStorage.getItem("1") !== null ) {
+        while (localStorage.getItem(`${srNo}`) !== "") {
+            let record = JSON.parse(localStorage.getItem(`${srNo}`)) ;
+            InsertRecord(record);
+            srNo++;
+        }
     }
 };
+
+
 
 submitBtn.addEventListener('click', AddRecord);
 tableRow.addEventListener('click', DeleteRow);
