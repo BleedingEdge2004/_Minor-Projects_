@@ -24,7 +24,7 @@ body {
 }
 
 .heading {
-  font-size:x-large;
+  font-size: x-large;
   margin: 0.6rem;
   color: white;
   text-shadow: 2px 2px 2px rgb(16, 16, 16), -2px -2px 2px black;
@@ -40,12 +40,14 @@ body {
   width: 55%;
   padding: 1.8rem;
   border: 0.2rem solid rgb(253, 253, 253);
-  box-shadow: 3px 3px 8px cyan,3px -3px 8px cyan,-3px 3px 8px cyan,-3px -3px 8px cyan;
+  box-shadow: 3px 3px 8px cyan, 3px -3px 8px cyan, -3px 3px 8px cyan,
+    -3px -3px 8px cyan;
   border-radius: 0px 30px;
   backdrop-filter: blur(1.3px);
 }
-#balanceBox h2,h3{
-    color: white;
+#balanceBox h2,
+h3 {
+  color: white;
 }
 
 #currentBalance span {
@@ -76,18 +78,18 @@ body {
 #expenceBox {
   display: flex;
   flex-flow: column;
-  margin-right: 6rem;
+  margin-right: 3rem;
 }
 
 #expenceBox h3,
 th {
   padding: 0.5rem;
-  color:white;
+  color: white;
 }
 
 #expenceBox td {
-    padding: 0.3rem;
-    color:white;
+  padding: 0.3rem;
+  color: white;
 }
 
 #newEntry {
@@ -95,13 +97,13 @@ th {
   flex-flow: column;
   justify-content: flex-start;
   padding: 1rem;
-  border:.2rem solid white;
+  border: 0.2rem solid white;
   border-radius: 15px;
 }
 
 #newEntry label {
   display: block;
-  color:white;
+  color: white;
 }
 
 #newEntry select,
@@ -125,15 +127,16 @@ input:hover {
   font-weight: 700;
   border-radius: 10px 0px;
   padding: 0.3rem;
+  margin: 0.5rem 0rem;
 }
-#Exps{
-  border:.4rem double white;
+#Exps {
+  border: 0.4rem double white;
   border-radius: 15px;
 }
 #Exps svg {
   transition: all 0.3s ease-out;
   cursor: pointer;
-  fill:white;
+  fill: white;
 }
 
 #Exps svg:hover {
@@ -143,7 +146,7 @@ input:hover {
 /* ================ Responsiveness ================== */
 
 /* For Tablets */
-@media (max-width: 1024px) {
+@media (768px < width < 1024px) {
   #balanceBox {
     width: 70%;
     padding: 1.2rem;
@@ -154,7 +157,6 @@ input:hover {
     margin: 3rem 0;
   }
   #expenceBox {
-    margin-right: 0;
     width: 90%;
   }
   #newEntry {
@@ -166,7 +168,7 @@ input:hover {
 }
 
 /* For Android / Mobile Devices */
-@media (max-width: 768px) {
+@media (width < 768px) {
   .mainContent {
     padding: 0.8rem;
   }
@@ -178,12 +180,13 @@ input:hover {
     font-size: x-large;
   }
   #bottomBox {
+    margin: 0.5rem 0rem;
     flex-direction: column;
-    margin: 2rem 0;
   }
   #expenceBox table {
     width: 100%;
     font-size: 0.9rem;
+    margin-bottom: 1.5rem;
   }
   #newEntry {
     margin-top: 1.5rem;
