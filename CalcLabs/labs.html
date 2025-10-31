@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcLabs</title>
+</head>
+<body>
+    <div class="backKey">Go Back</div>
+    <div class="labs" id="calculator">
+        <div id="calc">
+            <div class="input">Input</div>
+            <div class="nums">
+                <div><b>AC</b></div>
+                <div><b>%</b></div>
+                <div><b>DEL</b></div>
+                <div><b>÷</b></div>
+                <div><b>7</b></div>
+                <div><b>8</b></div>
+                <div><p>9</p></div>
+                <div><b>*</b></div>
+                <div><b>4</b></div>
+                <div><b>5</b></div>
+                <div><b>6</b></div>
+                <div><b>-</b></div>
+                <div><b>1</b></div>
+                <div><b>2</b></div>
+                <div><b>3</b></div>
+                <div><b>+</b></div>
+                <div><b>0</b></div>
+                <div><b>^</b></div>
+                <div><b>.</b></div>
+                <div><b>=</b></div>
+            </div>
+        </div>
+    </div>
+    <div class="labs" id="area">
+        <div class="select1">
+            <label for="ar1">
+                <select name="AreaUnit" id="area1">
+                    <option value="acre">Acre</option>
+                    <option value="are">Are</option>
+                    <option value="hectare">Hectare</option>
+                    <option value="sqcm">Square Centimetre</option>
+                    <option value="sqfoot">Square Foot</option>
+                    <option value="sqinch">Square Inch</option>
+                </select>
+            </label>
+            <input type="number" name="area1" id="ar1">
+        </div>
+        <div class="select2">
+            <label for="ar2">
+                <select name="AreaUnit" id="ar2">
+                    <option value="hectare">Hectare</option>
+                    <option value="acre">Acre</option>
+                    <option value="are">Are</option>
+                    <option value="sqcm">Square Centimetre</option>
+                    <option value="sqfoot">Square Foot</option>
+                    <option value="sqinch">Square Inch</option>
+                </select>
+            </label>
+        </div>
+        <button type="button"><big><b>Convert</b></big></button>
+    </div>
+    <div class="labs" id="length">
+        <div class="select1">
+            <label for="len1">
+                <select name="LengthUnit" id="len1">
+                    <option value="mm">Milli Metre</option>
+                    <option value="cm">Centi Metre</option>
+                    <option value="me">Metre</option>
+                    <option value="km">Kilo Metre</option>
+                    <option value="mile">Mile</option>
+                    <option value="foot">Foot</option>
+                    <option value="inch">Inch</option>
+                </select>
+            </label>
+            <input type="number" name="lenVal" id="lenVal">
+        </div>
+        <div class="select2">
+            <label for="len2">
+                <select name="LengthUnit" id="len2">
+                    <option value="me">Metre</option>
+                    <option value="mm">Milli Metre</option>
+                    <option value="cm">Centi Metre</option>
+                    <option value="km">Kilo Metre</option>
+                    <option value="mile">Mile</option>
+                    <option value="foot">Foot</option>
+                    <option value="inch">Inch</option>
+                </select>
+            </label>
+        </div>
+        <button type="button"><big><b>Convert</b></big></button>
+    </div>
+    <div class="labs" id="volume">
+        <div class="select1">
+            <label for="vol1">
+                <select name="VolumeUnit" id="vol1">
+                    <option value="lt">Litre</option>
+                    <option value="glUS">Gallon (US)</option>
+                    <option value="glUK">Gallon (UK)</option>
+                    <option value="ml">MilliLitre</option>
+                    <option value="cqc">Cubic Centimetre</option>
+                    <option value="cqm">Cubic Metre</option>
+                </select>
+            </label>
+            <input type="number" name="volVal" id="volVal">
+        </div>
+        <div class="select2">
+            <label for="vol2">
+                <select name="VolumeUnit" id="vol2">
+                    <option value="glUS">Gallon (US)</option>
+                    <option value="lt">Litre</option>
+                    <option value="glUK">Gallon (UK)</option>
+                    <option value="ml">MilliLitre</option>
+                    <option value="cqc">Cubic Centimetre</option>
+                    <option value="cqm">Cubic Metre</option>
+                </select>
+            </label>
+        </div>
+        <button type="button"><big><b>Convert</b></big></button>
+    </div>
+    <div class="labs" id="mass">
+        <div class="select1">
+            <label for="mass1">
+                <select name="MassUnit" id="mass1">
+                    <option value="gm">Gram</option>
+                    <option value="kg">Kilogram</option>
+                    <option value="onc">Ounce</option>
+                    <option value="pnd">Pound</option>
+                    <option value="qtn">Quintal</option>
+                    <option value="tn">Tonne</option>
+                </select>
+            </label>
+            <input type="number" name="massVal" id="massVal">
+        </div>
+        <div class="select2">
+            <label for="mass2">
+                <select name="MassUnit" id="mass2">
+                    <option value="kg">Kilogram</option>
+                    <option value="gm">Gram</option>
+                    <option value="onc">Ounce</option>
+                    <option value="pnd">Pound</option>
+                    <option value="qtn">Quintal</option>
+                    <option value="tn">Tonne</option>
+                </select>
+            </label>
+        </div>
+        <button type="button"><big><b>Convert</b></big></button>
+    </div>
+    <div class="labs" id="speed">
+        <div class="select1">
+            <label for="speed1">
+                <select name="SpeedUnit" id="speed1">
+                    <option value="kmph">Kilometre/hour</option>
+                    <option value="kmps">Kilometre/sec</option>
+                    <option value="mlph">Mile/hour</option>
+                    <option value="mlps">Mile/sec</option>
+                    <option value="mps">Metre/sec</option>
+                    <option value="mach">Mach</option>
+                </select>
+            </label>
+            <input type="number" name="speedVal" id="speedVal">
+        </div>
+        <div class="select2">
+            <label for="speed2">
+                <select name="SpeedUnit" id="speed2">
+                    <option value="mlph">Mile/hour</option>
+                    <option value="kmph">Kilometre/hour</option>
+                    <option value="kmps">Kilometre/sec</option>
+                    <option value="mlps">Mile/sec</option>
+                    <option value="mps">Metre/sec</option>
+                    <option value="mach">Mach</option>
+                </select>
+            </label>
+        </div>
+        <button type="button"><big><b>Convert</b></big></button>
+    </div>
+</body>
+</html>
