@@ -1,0 +1,102 @@
+:root{
+    --labsShadow1: rgb(156, 109, 250);
+    --labsShadow2: rgb(0, 255, 195);
+    --primaryBg: linear-gradient(275deg, rgb(22, 28, 57),rgb(10, 2, 51),rgb(14, 15, 16));
+}
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+    width: 100%;
+    background: var(--primaryBg);
+    color: aqua;
+    background-attachment: fixed;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 700;
+}
+.backKey{
+    color: inherit;
+    text-decoration: none;
+    border:.3rem solid;
+    border-radius:50%;
+    width: 60px;
+    position:fixed;
+    left:0.5rem;
+    top: .3rem;
+    margin-top:.5rem;
+    padding: .5rem;
+}
+.labs{
+    height: 100vh;
+    display: flex;
+    flex-flow:column;
+    justify-content: center;
+}
+.labs #header{
+    padding :2rem 0rem;
+    position: relative;
+    bottom: 4rem;
+}
+.labs select{
+    height: 2.5rem;
+    font-size:large;
+    font-weight: 700;
+    color: white;
+    background: var(--primaryBg);
+    border: 3px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.labs option{
+    background: black;
+}
+.labs input{
+    height: 2.5rem;
+    padding: 1rem ;
+    font-size:large;
+    font-weight: 700;
+    border-radius: 10px 100px;
+}
+.labs button{
+    height: 2rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.labs .select1, .select2, button{
+    margin: .6rem .6rem 1.5rem;
+}
+#calc{
+    border: .6rem solid ;
+    border-radius:15px;
+    height:30.8rem;
+    font-size: large;
+    width: 20rem;
+}
+.input{
+    display:flex;
+    height: 20%;
+    justify-content:flex-end;
+    align-items: center;
+    padding: 1.7rem;
+}
+.nums{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    row-gap: 2rem;
+    padding: 1.8rem 0rem;
+}
+.nums div{
+    padding: .6rem 0rem;
+    border:2px solid transparent;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+}
+.nums div:hover{
+    border:2px solid var(--labsShadow2);
+}

@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/labs.css">
     <title>CalcLabs</title>
 </head>
 <body>
-    <div class="backKey">Go Back</div>
+    <a class="backKey" href="./index.html">Go Back</a>
     <div class="labs" id="calculator">
+        <h1 id="header">Calculator</h1>
         <div id="calc">
             <div class="input">Input</div>
             <div class="nums">
@@ -35,8 +37,9 @@
         </div>
     </div>
     <div class="labs" id="area">
+        <h1 id="header">Area Converter</h1>
         <div class="select1">
-            <label for="ar1">
+            <input type="number" name="area1" id="ar1">
                 <select name="AreaUnit" id="area1">
                     <option value="acre">Acre</option>
                     <option value="are">Are</option>
@@ -45,11 +48,9 @@
                     <option value="sqfoot">Square Foot</option>
                     <option value="sqinch">Square Inch</option>
                 </select>
-            </label>
-            <input type="number" name="area1" id="ar1">
         </div>
         <div class="select2">
-            <label for="ar2">
+            <span id="txt">Convert TO : </span>
                 <select name="AreaUnit" id="ar2">
                     <option value="hectare">Hectare</option>
                     <option value="acre">Acre</option>
@@ -58,13 +59,13 @@
                     <option value="sqfoot">Square Foot</option>
                     <option value="sqinch">Square Inch</option>
                 </select>
-            </label>
         </div>
         <button type="button"><big><b>Convert</b></big></button>
     </div>
     <div class="labs" id="length">
+        <h1 id="header">Length Converter</h1>
         <div class="select1">
-            <label for="len1">
+            <input type="number" name="lenVal" id="lenVal">
                 <select name="LengthUnit" id="len1">
                     <option value="mm">Milli Metre</option>
                     <option value="cm">Centi Metre</option>
@@ -74,11 +75,9 @@
                     <option value="foot">Foot</option>
                     <option value="inch">Inch</option>
                 </select>
-            </label>
-            <input type="number" name="lenVal" id="lenVal">
         </div>
         <div class="select2">
-            <label for="len2">
+            <span id="txt">Convert TO : </span>
                 <select name="LengthUnit" id="len2">
                     <option value="me">Metre</option>
                     <option value="mm">Milli Metre</option>
@@ -88,13 +87,13 @@
                     <option value="foot">Foot</option>
                     <option value="inch">Inch</option>
                 </select>
-            </label>
         </div>
         <button type="button"><big><b>Convert</b></big></button>
     </div>
     <div class="labs" id="volume">
+        <h1 id="header">Volume Converter</h1>
         <div class="select1">
-            <label for="vol1">
+            <input type="number" name="volVal" id="volVal">
                 <select name="VolumeUnit" id="vol1">
                     <option value="lt">Litre</option>
                     <option value="glUS">Gallon (US)</option>
@@ -103,11 +102,9 @@
                     <option value="cqc">Cubic Centimetre</option>
                     <option value="cqm">Cubic Metre</option>
                 </select>
-            </label>
-            <input type="number" name="volVal" id="volVal">
         </div>
         <div class="select2">
-            <label for="vol2">
+            <span id="txt">Convert TO : </span>
                 <select name="VolumeUnit" id="vol2">
                     <option value="glUS">Gallon (US)</option>
                     <option value="lt">Litre</option>
@@ -116,13 +113,13 @@
                     <option value="cqc">Cubic Centimetre</option>
                     <option value="cqm">Cubic Metre</option>
                 </select>
-            </label>
         </div>
         <button type="button"><big><b>Convert</b></big></button>
     </div>
     <div class="labs" id="mass">
+        <h1 id="header">Mass Converter</h1>
         <div class="select1">
-            <label for="mass1">
+            <input type="number" name="massVal" id="massVal">
                 <select name="MassUnit" id="mass1">
                     <option value="gm">Gram</option>
                     <option value="kg">Kilogram</option>
@@ -131,11 +128,9 @@
                     <option value="qtn">Quintal</option>
                     <option value="tn">Tonne</option>
                 </select>
-            </label>
-            <input type="number" name="massVal" id="massVal">
         </div>
         <div class="select2">
-            <label for="mass2">
+            <span id="txt">Convert TO : </span>
                 <select name="MassUnit" id="mass2">
                     <option value="kg">Kilogram</option>
                     <option value="gm">Gram</option>
@@ -144,13 +139,13 @@
                     <option value="qtn">Quintal</option>
                     <option value="tn">Tonne</option>
                 </select>
-            </label>
         </div>
         <button type="button"><big><b>Convert</b></big></button>
     </div>
     <div class="labs" id="speed">
+        <h1 id="header">Speed Converter</h1>
         <div class="select1">
-            <label for="speed1">
+            <input type="number" name="speedVal" id="speedVal">
                 <select name="SpeedUnit" id="speed1">
                     <option value="kmph">Kilometre/hour</option>
                     <option value="kmps">Kilometre/sec</option>
@@ -159,11 +154,9 @@
                     <option value="mps">Metre/sec</option>
                     <option value="mach">Mach</option>
                 </select>
-            </label>
-            <input type="number" name="speedVal" id="speedVal">
         </div>
         <div class="select2">
-            <label for="speed2">
+            <span id="txt">Convert TO : </span>
                 <select name="SpeedUnit" id="speed2">
                     <option value="mlph">Mile/hour</option>
                     <option value="kmph">Kilometre/hour</option>
@@ -172,7 +165,6 @@
                     <option value="mps">Metre/sec</option>
                     <option value="mach">Mach</option>
                 </select>
-            </label>
         </div>
         <button type="button"><big><b>Convert</b></big></button>
     </div>
