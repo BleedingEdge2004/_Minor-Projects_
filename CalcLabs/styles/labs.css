@@ -78,23 +78,27 @@ body{
     font-size: large;
     width: 20rem;
 }
-.input{
+.input {
     display:flex;
     height: 20%;
     justify-content:flex-end;
     align-items: center;
-    padding: 1.7rem;
+    padding: 1rem;
+    margin: .4rem;
+    border: 2px solid var(--labsShadow2);
+    border-radius: 10px;
 }
 .nums{
     display:grid;
     grid-template-columns: repeat(4,1fr);
     row-gap: 2rem;
-    padding: 1.8rem 0rem;
+    padding: .8rem 0rem ;
 }
 .nums div{
     padding: .6rem 0rem;
     border:2px solid transparent;
     border-radius: 10px;
+    text-decoration: bold;
     transition: all .3s ease-in-out;
 }
 .nums div:hover{
