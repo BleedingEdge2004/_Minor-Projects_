@@ -11,6 +11,7 @@ Welcome to my collection of minor projects built during my journey into frontend
 - **Portfolio** – My personal portfolio webpage showcasing my work and skills.
 - **ToDoList** – A basic task management app with interactive UI.
 - **ExpenceTracker** -A basic Expence Calculator with Save Load Features.
+- **Calc.Labs** -Lab Consist of Calculator and Other Measurements Converter.
 
 ---
 

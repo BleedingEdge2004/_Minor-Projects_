@@ -63,9 +63,10 @@ body{
     font-weight: 700;
     border-radius: 10px 100px;
 }
-.labs button{
+.labs .ResultVal{
     height: 2rem;
     font-weight: 600;
+    font-size: xx-large;
     border-radius: 5px;
 }
 .labs .select1, .select2, button{
